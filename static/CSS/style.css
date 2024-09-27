@@ -1,0 +1,410 @@
+/* Geral */
+* {
+    background-color: #F6F4F6;
+    color: #8D493A;
+    padding: 0;
+    margin: 0;
+    font-family: "Source Sans 3", sans-serif;
+    box-sizing: border-box;
+}
+
+main h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 46px; 
+}
+
+main h3 {
+    font-weight: bold;
+    font-size: 18px; 
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-logo img {
+    width: 100%;
+    width: 125px;
+    margin-top: 15px;
+}
+
+.nav-container {
+    margin: 0 10px;
+}
+
+.nav-container li {
+    display: inline-block;
+    margin: 0 9px;
+}
+
+.nav-container a {
+    text-decoration: none;
+}
+
+/* Sessão sobre nós */
+.container-sobrenos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.ilustracao-one {
+    flex: 1;
+    margin-right: 8px;
+}
+
+.texto-sobrenos {
+    flex: 1.4;
+}
+
+.ilustracao-one img {
+    max-width: 100%;
+    width: 549px;
+    height: auto;
+    margin-left: 35px;
+}
+
+.name-logo h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.texto-sobrenos p {
+    text-align: justify;
+    margin-right: 30px;
+}
+
+/* Sessão Serviços */
+.servicos h1 {
+    text-align: center;
+    margin: 15px 10px;
+}
+
+.cards-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 20px;
+}
+
+/* Estilo dos Cards */
+.card, .card-gestao {
+    background-color: rgba(228, 208, 208, 0.31);
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    width: 280px; 
+    height: auto;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+    margin: 10px; 
+}
+
+/* Estilo de Títulos dentro dos Cards */
+.card h3, .card-gestao h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(228, 208, 208, 0.05);
+
+}
+
+/* Itens das Listas */
+.card ul, .card-gestao ul {
+    padding-left: 20px; 
+    line-height: 1.6; 
+    margin-top: 10px;
+    background-color: rgba(228, 208, 208, 0.05);
+}
+
+.card li, .card-gestao li {
+    list-style-type: disc; 
+    margin-left: 10px;
+    margin-bottom: 8px;
+    font-size: 14px; 
+    background-color: rgba(228, 208, 208, 0.05);
+}
+
+/* Efeito de Hover */
+.card:hover, .card-gestao:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(250, 198, 198, 0.2); 
+}
+
+/* Solicitação de Contato */
+
+/* Estilo da seção de contato */
+.container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.container-form h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+    color: #8D493A;
+    margin-bottom: 20px;
+}
+
+/* Estilo do formulário */
+form {
+    width: 650px;
+    padding: 15px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Estilo dos labels e campos de texto */
+form label {
+    grid-column: span 2;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    background-color: #F6F4F6;
+    color: #8D493A;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+form textarea {
+    height: 80px;
+}
+
+/* Estilo para os campos do formulário */
+#nome, #email, #telefone, #motivo {
+    grid-column: span 2;
+}
+
+/* Centralizar o botão usando flexbox */
+.form-submit-container {
+    grid-column: span 2;
+    display: flex;
+    justify-content: right;
+}
+
+/* Estilo do botão de envio */
+form input[type="submit"] {
+    text-align: center;
+    width: 85px;
+    background-color: #8D493A;
+    color: #F6F4F6;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #A65A42;
+}
+
+.flash-messages {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    z-index: 1000;
+}
+
+.flash-messages ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flash-messages li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.flash-messages .alert {
+    color: #F6F4F6;
+}
+
+.flash-messages .success {
+    background-color: rgba(228, 208, 208, 0.31); 
+    color: #8D493A;  
+    
+}
+
+.flash-messages .error {
+    background-color: #8D493A;
+    color: #F6F4F6;  
+}
+
+/* Sessão Desenvolvedoras */
+
+.container-dev h1{
+    text-align: center;
+    margin: 15px 10px;
+}
+
+/* Sessão Desenvolvedoras */
+
+/* Cards das Desenvolvedoras */
+.container-dev .cards-desenvolvedoras {
+    display: flex;
+    justify-content: space-evenly; 
+    padding: 50px;
+    gap: 15px; 
+    width: 100%; 
+}
+
+/* Estilos dos cards das desenvolvedoras */
+.cards-desenvolvedoras .desenvolvedora {
+    background-color: rgba(228, 208, 208, 0.31);
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    width: 290px; 
+    height: 200px; 
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 10px; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título e texto dos cards das desenvolvedoras */
+.cards-desenvolvedoras .desenvolvedora h3 {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(228, 208, 208, 0.05);
+}
+
+h4 {
+    background-color: rgba(228, 208, 208, 0.05);
+    text-align: center;
+    font-weight: normal;
+}
+
+.cards-desenvolvedoras .desenvolvedora p {
+    margin: 9px;
+    background-color: rgba(228, 208, 208, 0.05);
+}
+
+/* Efeito de hover nos cards */
+.cards-desenvolvedoras .desenvolvedora:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 8px 16px rgba(250, 198, 198, 0.05);
+}
+
+/* Rodapé */
+
+footer {
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Para telas menores (responsividade) */
+@media (max-width: 768px) {
+    header {
+        display: flex; /* Mantém a flexibilidade do cabeçalho */
+        flex-direction: row; /* Garante que logo e navegação estejam lado a lado */
+        justify-content: space-between; /* Espaço entre logo e itens de navegação */
+    }
+
+    .nav-container {
+        margin: 0; /* Remove margens para melhor alinhamento */
+        display: flex; /* Exibe os itens de navegação em linha */
+        flex-wrap: wrap; /* Permite que os itens se movam para a linha abaixo se necessário */
+    }
+
+    .container-sobrenos, .cards-container {
+        flex-direction: column; /* Coloca itens em coluna */
+        align-items: center; /* Centraliza itens */
+    }
+
+    .ilustracao-one img {
+        margin-left: 0; /* Remove margens à esquerda */
+        width: 90%; /* Ajusta a largura da imagem */
+        height: auto; /* Mantém a proporção */
+    }
+
+    .card, .card-gestao {
+        width: 100%; /* Cards ocupam toda a largura disponível */
+        max-width: 400px; /* Limita a largura máxima dos cards */
+    }
+
+    .cards-desenvolvedoras {
+        flex-direction: column; /* Faz os cards das desenvolvedoras empilharem-se em coluna */
+    }
+
+    .cards-desenvolvedoras .desenvolvedora {
+        width: 100%; /* Cards ocupam toda a largura disponível */
+        max-width: none; /* Remove limite de largura */
+        margin: 10px 0; /* Espaçamento vertical entre os cards */
+    }
+
+    form {
+        width: 100%; /* Formulário ocupa 90% da tela */
+        flex-direction: column; /* Coloca campos em coluna */
+    }
+
+    form input[type="submit"] {
+        width: 100%; /* Botão ocupa toda a largura do formulário */
+    }
+}
+
+@media (max-width: 425px) {
+    /* Estilos específicos para telas menores que 425px */
+    
+    header {
+        padding: 0 1rem; /* Menos espaçamento lateral no cabeçalho */
+    }
+
+    .container-sobrenos, .cards-container {
+        padding: 10px; /* Reduzir o espaçamento interno */
+    }
+
+    .ilustracao-one img {
+        width: 100%; /* Ajusta a largura da imagem para 100% */
+        height: auto; /* Mantém a proporção */
+        margin-left: 0; /* Remove margens */
+    }
+
+    .card, .card-gestao, .cards-desenvolvedoras .desenvolvedora {
+        width: 100%; /* Cards ocupam toda a largura disponível */
+        max-width: none; /* Remove limite de largura */
+    }
+
+    form {
+        width: 100%; /* Formulário ocupa 100% da tela */
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form textarea {
+        font-size: 14px; /* Tamanho da fonte menor */
+    }
+
+    .container-form h1 {
+        font-size: 32px; /* Reduzir tamanho do título no formulário */
+    }
+}
+
+
+
+
+

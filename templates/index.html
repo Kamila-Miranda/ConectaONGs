@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conecta ONG</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='img/logo-conecta.svg') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='CSS/style.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Dancing+Script:wght@400..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <div class="container-logo">
+        <img
+          src="{{ url_for('static', filename='img/logo-conecta.svg') }}"
+          alt="Conecta ONG"
+        />
+      </div>
+      <nav class="nav-container">
+        <ul>
+          <li><a href="#sobrenos">Sobre nós</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#solicitarcontato">Solicitar contato</a></li>
+          <li><a href="#desenvolvedoras">Desenvolvedoras</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- Sessão sobre nós -->
+      <section class="sobrenos" id="sobrenos">
+        <div class="container-sobrenos">
+          <div class="ilustracao-one">
+            <img
+              src="{{ url_for('static', filename='img/ilustração.svg') }}"
+              alt="Ilustração"
+            />
+          </div>
+          <div class="texto-sobrenos">
+            <div class="name-logo">
+              <h1>Conecta ONG</h1>
+            </div>
+            <p>
+              A Conecta ONG é uma empresa especializada em desenvolver soluções
+              tecnológicas para ONGs sem fins lucrativos. Nosso sistema é
+              projetado para simplificar a gestão de recursos, voluntários e
+              campanhas, permitindo que as organizações se concentrem em suas
+              causas. Com foco na eficiência e transparência, oferecemos uma
+              plataforma intuitiva que facilita a captação de doações, o
+              engajamento de voluntários e a análise de impacto social. Nossa
+              missão é apoiar o trabalho das ONGs, potencializando seus
+              resultados e contribuindo para um impacto positivo na sociedade.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sessão Serviços -->
+      <section class="container-cards servicos" id="servicos">
+        <h1>Serviços Disponibilizados</h1>
+        <div class="cards-container">
+          <div class="card-gestao">
+            <h3>Gestão Financeira</h3>
+            <ul>
+              <li>Periodicidade dos Relatórios</li>
+              <li>Conteúdo dos Relatórios</li>
+              <li>Receita, Despesas e Saldo</li>
+              <li>Gráficos e Visualizações</li>
+              <li>Acesso e Armazenamento</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Centralização de Chamados</h3>
+            <ul>
+              <li>Interface única</li>
+              <li>Priorização e Atribuição</li>
+              <li>Automatização de Respostas</li>
+              <li>Feedback e Avaliação</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Levantamento de Dados</h3>
+            <ul>
+              <li>Dados Demográficos das ONGs</li>
+              <li>Interações no App</li>
+              <li>Satisfação dos Usuários</li>
+              <li>Impacto e Resultado</li>
+              <li>Dados Financeiros</li>
+              <li>Tendências e Necessidades</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Comunicação</h3>
+            <ul>
+              <li>Canal de Suporte</li>
+              <li>Notificações e Atualizações</li>
+              <li>Conteúdo Educativo</li>
+              <li>Feedback Contínuo</li>
+              <li>Transparência</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Gerenciamento de Doações</h3>
+            <ul>
+              <li>Registro de Doações</li>
+              <li>Categoria de Doações</li>
+              <li>Relatório de Doações</li>
+              <li>Impacto das Doações</li>
+              <li>Integração com Controle de Estoque</li>
+              <li>Transparência e Acompanhamento</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sessão Contato -->
+      <section class="container-form" id="solicitarcontato">
+        <h1>Solicitar contato</h1>
+        <form action="/contato" method="post">
+          <label for="nome">Nome:</label><br />
+          <input type="text" id="nome" name="nome" required /><br /><br />
+
+          <label for="email">E-mail:</label><br />
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="telefone">Telefone:</label><br />
+          <input type="tel" id="telefone" name="telefone" /><br /><br />
+
+          <label for="motivo">Motivo do Contato:</label><br />
+          <textarea id="motivo" name="motivo" required></textarea><br /><br />
+
+          <div class="form-submit-container">
+            <input type="submit" value="Enviar" />
+          </div>
+        </form>
+      </section>
+
+      <!-- Exibir Mensagens de Sucesso ou Erro -->
+      <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %}
+        <ul>
+          {% for category, message in messages %}
+          <li class="flash-message alert {{ category }}">{{ message }}</li>
+          <!-- Adicionei a classe flash-message aqui -->
+          {% endfor %}
+        </ul>
+        {% endif %} {% endwith %}
+      </div>
+
+      <!-- Sessão Desenvolvedoras -->
+      <section class="container-dev desenvolvedoras" id="desenvolvedoras">
+        <h1>Desenvolvedoras</h1>
+
+        <div class="cards-desenvolvedoras">
+          <div class="desenvolvedora">
+            <h3>Amanda Sousa</h3>
+            <h4>Desenvolvimento e Design</h4>
+            <p>
+              Planejar a interface do aplicativo em relação a cores, marcas e
+              etc...
+            </p>
+          </div>
+
+          <div class="desenvolvedora">
+            <h3>Maria Eduarda</h3>
+            <h4>Desenvolvimento e DBA</h4>
+            <p>Responsável pelo Banco de Dados e cuidados com a aplicação.</p>
+          </div>
+
+          <div class="desenvolvedora">
+            <h3>Julia Gabrielle</h3>
+            <h4>Desenvolvimento e UA</h4>
+            <p>
+              Responsável por separar e organizar o projeto, garantindo o
+              agrupamento eficiente do site.
+            </p>
+          </div>
+
+          <div class="desenvolvedora">
+            <h3>Kamila Silva</h3>
+            <h4>Desenvolvimento e Prototipagem</h4>
+            <p>
+              Responsável pelo modelo inicial do projeto e desenvolvimento do
+              sistema.
+            </p>
+          </div>
+
+          <div class="desenvolvedora">
+            <h3>Hadasia Vitória</h3>
+            <h4>Analista de Negócio</h4>
+            <p>
+              Documenta detalhadamente os requisitos para encontrar
+              oportunidades de melhorias.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>&copy; 2024 Conecta ONG. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='JavaScript/app.js') }}"></script>
+  </body>
+</html>
